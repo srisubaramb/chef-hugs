@@ -4,7 +4,7 @@ import Ingredients  from './components/Ingredients'
 import Recipe from './components/Recipe'
 import { getRecipeFromMistral } from './fetchFromAi'
 export default function App() {
-  const [ingredients, setIngredients] = useState(['rice', 'chicken', 'spices', 'onions'])
+  const [ingredients, setIngredients] = useState([])
   const [getRecipe, setGetRecipe] = useState(false);
   const [recipeMarkdown, setRecipeMarkdown] = useState('');
   function handleForm(data) {

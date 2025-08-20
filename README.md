@@ -87,5 +87,3 @@ Just push to GitHub, connect with Vercel, and add the environment variable (`VIT
 > Chef Hugs isn’t just an app — it’s about making cooking **more playful, less wasteful, and always inspiring**.
 
 ---
-
-Do you want me to **also bake in a little “demo screenshot / gif section”** in this README so it looks eye-catching on GitHub?

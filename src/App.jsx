@@ -5,24 +5,25 @@ import Recipe from './components/Recipe'
 import { getRecipeFromMistral } from './fetchFromAi'
 export default function App() {
   const [ingredients, setIngredients] = useState([])
+  const[isLoading, setIsLoading] = useState(false)
   const [getRecipe, setGetRecipe] = useState(false);
   const recipe = useRef(null)
   const [recipeMarkdown, setRecipeMarkdown] = useState('');
-  let isLoading = false
+
   //use to scroll
   useEffect(function() {
-    if(recipe.current !== null && recipeMarkdown != '')
-        recipe.current.scrollIntoView({behaviour: "smooth"})
-  },[recipe])
+    if(recipe.current !== null && recipeMarkdown !== '')
+        recipe.current.scrollIntoView({behavior: "smooth"})
+  },[recipeMarkdown])
 
   function handleForm(data) {
     setIngredients(prevIngredients => [...prevIngredients, data.get('ingredient')])
   }
   async function getRecipeToggle() {
     setGetRecipe(pervState => !pervState);
-    isLoading = !isLoading
+    setIsLoading(true)
     const recipe = await getRecipeFromMistral(ingredients)
-    isLoading = !isLoading
+    setIsLoading(false)
     setRecipeMarkdown(recipe);
   }
   

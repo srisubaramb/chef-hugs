@@ -37,8 +37,7 @@ export default function App() {
           <button className='form-btn'>Add ingredient</button>
         </form>
         <Ingredients ingredients = {ingredients} getRecipeToggle = {getRecipeToggle} ref = {recipe}/>
-        {isLoading && <p>Loading</p>}
-        {getRecipe && <Recipe recipeMarkdown = {recipeMarkdown}/>}
+        {getRecipe && <Recipe recipeMarkdown = {recipeMarkdown} isLoading = {isLoading}/>}
       </main>
     </>
   )

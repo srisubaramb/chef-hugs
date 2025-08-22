@@ -5,6 +5,7 @@ export default function Ingredients(props)  {
     return(
         <section className="ingredients">
             <h2 className="ingredients-title">Ingredients on hand:</h2>
+            <p>Add atleast 3 Ingredients</p>
             <ul className="ingredients-list">
                 {listOfIngredients}
             </ul>
